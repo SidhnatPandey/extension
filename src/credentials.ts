@@ -4,7 +4,7 @@ import * as Octokit from '@octokit/rest';
 const GITHUB_AUTH_PROVIDER_ID = 'github';
 // The GitHub Authentication Provider accepts the scopes described here:
 // https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
-const SCOPES = ['user:email']; 
+const SCOPES = [`sidhantpandeynp6@gmail.com`]; //'user:email'
 
 export class Credentials {
 	private octokit: Octokit.Octokit | undefined;
@@ -24,8 +24,7 @@ export class Credentials {
 
 		if (session) {
 			this.octokit = new Octokit.Octokit({
-				auth: session.accessToken
-				//`ghu_DBDYTgfESJ0XLlwhu4072Kh451njBY207rSJ`  			
+				auth: `ghu_imqBAXUtRirzzcJPwAiqImhkzsvzYZ1eDtPf` //session.accessToken 			
 			});
 
 			return;
@@ -56,8 +55,7 @@ export class Credentials {
 		 */
 		const session = await vscode.authentication.getSession(GITHUB_AUTH_PROVIDER_ID, SCOPES, { createIfNone: true });
 		this.octokit = new Octokit.Octokit({
-			auth: session.accessToken
-				//`ghu_DBDYTgfESJ0XLlwhu4072Kh451njBY207rSJ`
+			auth: `ghu_imqBAXUtRirzzcJPwAiqImhkzsvzYZ1eDtPf` //session.accessToken
 		});
 
 		return this.octokit;
